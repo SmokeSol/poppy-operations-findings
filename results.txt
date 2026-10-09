@@ -1,0 +1,50 @@
+
+1  Summary and terms disagree
+   draft, read literally : user sees "Exchange your jacket for size M. No extra cost." and approves; charged 17.00
+   with the extensions   : user sees ['YOU PAY 17.00 GBP now'] and declines; charged 0.00
+
+2  'Approve' that means 'pay'
+   draft, read literally : user approves a 'refund'; charged 45.00
+   with the extensions   : user sees ['YOU PAY 45.00 GBP now'] and declines; charged 0.00
+
+3  Dispute: honest
+   draft, read literally : no dispute
+   with the extensions   : no fault: offer, approval and charge all match
+
+3  Dispute: agent confirmed without asking
+   draft, read literally : CANNOT TELL: the agent's call is provable; the terms and the user's approval are not
+   with the extensions   : blocked: confirm refused without the user's proof
+
+3  Dispute: company charged something else
+   draft, read literally : CANNOT TELL: the agent's call is provable; the terms and the user's approval are not
+   with the extensions   : company at fault: it charged other than the terms it signed
+
+3  Dispute: user falsely denies approving
+   draft, read literally : CANNOT TELL: the agent's call is provable; the terms and the user's approval are not
+   with the extensions   : user's denial refuted: their key signed these exact terms
+
+4a Standing permission, 50 small charges
+   draft, read literally : all 50 confirmed without the user; charged 999.50; user asked 0 times
+   with the extensions   : 1 covered by the signed grant; charged 19.99; user asked 3 times, 46 folded
+
+4b Standing permission, an unfamiliar key adds a monthly fee
+   draft, read literally : careless agent: confirmed without asking; careful agent: cannot use the permission at all, asks the user (declined)
+   with the extensions   : declined; user was shown ['YOU PAY 19.99 GBP now', 'ADDS 9.99 GBP EVERY MONTH']
+
+5  1,000 unrequested proposals
+   draft, read literally : user interrupted 1,000 times
+   with the extensions   : user interrupted 3 times; 997 folded
+
+Scenarios ending in harm or an unprovable dispute: draft 8 of 9, with extensions 0 of 9
+
+What the draft already gets right (these pass on the literal implementation):
+   ok   100 confirms through any channel perform the action once
+   ok   an expired operation cannot be confirmed
+   ok   a standing permission is refused when the Company requires the user
+   ok   an agent that follows the draft asks again after a new revision
+   ok   TARGET: an agent that re-confirms blindly is caught
+   ok   a cancelled operation cannot be confirmed
+   ok   extensions: terms with a money key outside the vocabulary are refused, user not asked
+   ok   extensions: an approval signed by the wrong key is refused
+
+All findings reproduced as described: True; conformance checks passing: 8/8
